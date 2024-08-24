@@ -10,8 +10,8 @@ The Supplier Search API is a proof of concept developed for Makersharks to allow
 Before running the application, ensure you have the following installed:
 
 - **Java 21**: Required to build and run the application.
-- **Maven**: For building the project and managing dependencies.
-- **MySQL**: Database system to store supplier data.
+- **Maven 3.9 and above**: For building the project and managing dependencies.
+- **MySQL 8.0 and above**: Database system to store supplier data.
 - **Git Bash**
 
 ## Project Setup
