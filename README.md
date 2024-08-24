@@ -144,15 +144,15 @@ Before running the application, ensure you have the following installed:
     INSERT INTO supplier (supplier_id, company_name, website, location, nature_of_business, manufacturing_process)
      VALUES
     (1, 'Alpha Tech', 'www.alphatech.com', 'India', 'SMALL_SCALE', '_3D_PRINTING'),
-    (2, 'Beta Manufacturing', 'www.betamanufacturing.com', 'India', 'MEDIUM_SCALE', 'moulding'),
-    (3, 'Gamma Industries', 'www.gammaindustries.com', 'USA', 'LARGE_SCALE', 'casting'),
-    (4, 'Delta Coating', 'www.deltacoating.com', 'India', 'SMALL_SCALE', 'coating'),
+    (2, 'Beta Manufacturing', 'www.betamanufacturing.com', 'India', 'MEDIUM_SCALE', 'MOULDING'),
+    (3, 'Gamma Industries', 'www.gammaindustries.com', 'USA', 'LARGE_SCALE', 'CASTING'),
+    (4, 'Delta Coating', 'www.deltacoating.com', 'India', 'SMALL_SCALE', 'COATING'),
     (5, 'Epsilon Innovations', 'www.epsiloninnovations.com', 'Japan', 'MEDIUM_SCALE', '_3D_PRINTING'),
-    (6, 'Zeta Moulding', 'www.zetamoulding.com', 'Japan', 'LARGE_SCALE', 'moulding'),
-    (7, 'Eta Castings', 'www.etacastings.com', 'USA', 'SMALL_SCALE', 'casting'),
+    (6, 'Zeta Moulding', 'www.zetamoulding.com', 'Japan', 'LARGE_SCALE', 'MOULDING'),
+    (7, 'Eta Castings', 'www.etacastings.com', 'USA', 'SMALL_SCALE', 'CASTING'),
     (8, 'Theta Technologies', 'www.thetatechnologies.com', 'India', 'LARGE_SCALE', '_3D_PRINTING'),
-    (9, 'Iota Coatings', 'www.iotacoatings.com', 'Japan', 'MEDIUM_SCALE', 'coating'),
-    (10, 'Kappa Fabrication', 'www.kappafabrication.com', 'USA', 'SMALL_SCALE', 'moulding');
+    (9, 'Iota Coatings', 'www.iotacoatings.com', 'Japan', 'MEDIUM_SCALE', 'COATING'),
+    (10, 'Kappa Fabrication', 'www.kappafabrication.com', 'USA', 'SMALL_SCALE', 'MOULDING');
 
     ```
 
