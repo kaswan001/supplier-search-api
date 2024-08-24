@@ -178,6 +178,15 @@ The API uses JWT (JSON Web Token) for authentication.
 ### 1. **Obtain a Token**
 
    - **Endpoint**: `/api/auth/login [POST]`
+
+   - **Request URL**
+
+     ```url
+   
+        http://localhost:8001/api/auth/login
+   
+     ```
+
    - **Request Body**:
 
      ```json
@@ -223,12 +232,21 @@ The API uses JWT (JSON Web Token) for authentication.
 ### 1. `/api/supplier/query [POST]`
 
 - **Description**: Retrieves a list of manufacturers based on the provided criteria.
+
+- **Request URL**
+
+  ```url
+
+     http://localhost:8001/api/supplier/query?location=India&natureOfBusiness=MEDIUM_SCALE&manufacturingProcess=MOULDING&page=0&size=10
+
+  ```
+
 - **Request Body**:
 
   ```json
   {
     "location": "India",
-    "nature_of_business": "SMALL_SCALE",
+    "nature_of_business": "MEDIUM_SCALE",
     "manufacturing_processes": "MOULDING"
   }
   ```
@@ -236,44 +254,53 @@ The API uses JWT (JSON Web Token) for authentication.
 - **Response**:
 
   ```json
+          {
+     "totalPages": 1,
+     "totalElements": 1,
+     "size": 10,
+     "content": [
        {
-    "totalPages": 0,
-    "totalElements": 0,
-    "numberOfElements": 0,
-    "first": true,
-    "last": true,
-    "size": 10,
-    "content": [],
-    "number": 0,
-    "sort": {
-      "empty": true,
-      "sorted": false,
-      "unsorted": true
-    },
-    "pageable": {
-      "pageNumber": 0,
-      "pageSize": 10,
-      "sort": {
-        "empty": true,
-        "sorted": false,
-        "unsorted": true
-      },
-      "offset": 0,
-      "paged": true,
-      "unpaged": false
-    },
-    "empty": true
-  }
+         "supplierId": 2,
+         "companyName": "Beta Manufacturing",
+         "location": "India",
+         "website": "www.betamanufacturing.com",
+         "manufacturingProcess": "MOULDING",
+         "natureOfBusiness": "MEDIUM_SCALE"
+       }
+     ],
+     "number": 0,
+     "sort": {
+       "empty": true,
+       "sorted": false,
+       "unsorted": true
+     },
+     "first": true,
+     "last": true,
+     "numberOfElements": 1,
+     "pageable": {
+       "pageNumber": 0,
+       "pageSize": 10,
+       "sort": {
+         "empty": true,
+         "sorted": false,
+         "unsorted": true
+       },
+       "offset": 0,
+       "paged": true,
+       "unpaged": false
+     },
+     "empty": false
+   }
   ```
 
  - **Example cURL Command**:
 
    ```bash
-     curl -X 'POST' \
-      'http://localhost:8001/api/supplier/query?location=India&natureOfBusiness=SMALL_SCALE&manufacturingProcess=MOULDING&page=0&size=10' \
-      -H 'accept: */*' \
-      -H 'Authorization: Bearer         eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcyNDUwNzAwNSwiZXhwIjoxNzI1MTExODA1fQ.eI5q0n0dEzurBR92zd6Ao3ZML4oKfKBE2ApRlf3YCJE_v4xFkSbATtuu7KuZkxiU' \
-    -d ''
+        curl -X 'POST' \
+     'http://localhost:8001/api/supplier/query?location=India&natureOfBusiness=MEDIUM_SCALE&manufacturingProcess=MOULDING&page=0&size=10' \
+     -H 'accept: */*' \
+     -H 'Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcyNDUwOTgwNCwiZXhwIjoxNzI1MTE0NjA0fQ.EwOzApY4I4CKIGAL__9Ix_LRwVhyB0LE4P-H5CG8ZCWmtK3bxOW_1pXI5iiiloBT' \
+     -d ''
    ```
 
 ## Testing
