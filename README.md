@@ -67,10 +67,10 @@ Before running the application, ensure you have the following installed:
         
         CREATE TABLE users (
           id BIGINT AUTO_INCREMENT PRIMARY KEY,
-          name VARCHAR(255),
-          username VARCHAR(255) NOT NULL UNIQUE,
           email VARCHAR(255) NOT NULL UNIQUE,
-          password VARCHAR(255) NOT NULL
+          name VARCHAR(255),
+          password VARCHAR(255) NOT NULL,
+          username VARCHAR(255) NOT NULL UNIQUE
         );
 
         ```
