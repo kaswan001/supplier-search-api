@@ -181,7 +181,7 @@ The API uses JWT (JSON Web Token) for authentication.
 
    - **Request URL**
 
-     ```url
+     ```bash
    
         http://localhost:8001/api/auth/login
    
@@ -235,7 +235,7 @@ The API uses JWT (JSON Web Token) for authentication.
 
 - **Request URL**
 
-  ```url
+  ```bash
 
      http://localhost:8001/api/supplier/query?location=India&natureOfBusiness=MEDIUM_SCALE&manufacturingProcess=MOULDING&page=0&size=10
 
