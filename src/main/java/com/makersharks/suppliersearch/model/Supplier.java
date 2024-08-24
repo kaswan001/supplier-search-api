@@ -19,21 +19,21 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Supplier {
 
-	@Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "supplier_id")
+    @Column(name = "supplier_id")
     private Long supplierId;
 	
-	@Column(name = "company_name", nullable = false)
+    @Column(name = "company_name", nullable = false)
     private String companyName;
 	
-	@Column(name = "location", nullable = false)
+    @Column(name = "location", nullable = false)
     private String location;
 	
-	@Column(name = "website", nullable = false)
+    @Column(name = "website", nullable = false)
     private String website;
 
-	@Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.STRING)
     @Column(name = "manufacturing_process", nullable = false)
     private ManufacturingProcess manufacturingProcess;
 	
