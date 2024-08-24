@@ -254,7 +254,7 @@ The API uses JWT (JSON Web Token) for authentication.
 - **Response**:
 
   ```json
-          {
+  {
      "totalPages": 1,
      "totalElements": 1,
      "size": 10,
