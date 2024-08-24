@@ -57,7 +57,7 @@ Before running the application, ensure you have the following installed:
 
    ```
 
-   For testing the `src/test/resources/application-test.properties` file :
+   Update for testing `src/test/resources/application-test.properties` file (Optional) :
 
    ```properties
    spring.datasource.url=jdbc:h2:mem:test;MODE=MySQL;
