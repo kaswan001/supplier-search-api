@@ -131,33 +131,11 @@ Before running the application, ensure you have the following installed:
 
    ```
 
-
-## Running the Application
-
-1. **Build and Run the Application**
-
-   Use Maven to build and run the application:
-
-   ```bash
-   
-   mvn clean install
-   mvn spring-boot:run
-
-   ```
-
-   The application will start on `http://localhost:8001`.
-
 ## Populating the Database
 
-   Before using the API endpoints or Swagger UI, you need to populate the database with sample data. Follow these steps:
+**required tables in the `makersharks` database**:
 
-1. **Generate Tables**
-
-   Run the application with the above configuration to auto-generate the required tables in the `makersharks` database
-
-2. **Insert Sample Data**
-
-   **Insert Supplier Data**:
+  - **Insert Supplier Data**:
 
     Use the following SQL insert queries to populate the `supplier` table. You can add more records if desired.
 
@@ -178,27 +156,51 @@ Before running the application, ensure you have the following installed:
 
     ```
 
-   **Insert User and Role Data**:
+ - **Insert User and Role Data**:
 
    Insert the following SQL queries to populate the `users`, `roles`, and `users_roles` tables. This data is used for authentication purposes.
 
-   ```sql
-   INSERT INTO users (user_id, email, username, password, full_name)
-   VALUES
-   (1, 'ramesh@gmail.com', 'ramesh', '$2a$10$5PiyN0MsG0y886d8xWXtwuLXK0Y7zZwcN5xm82b4oDSVr7yF0O6em', 'ramesh'),
-   (2, 'admin@gmail.com', 'admin', '$2a$10$gqHrslMttQWSsDSVRTK1OehkkBiXsJ/a4z2OURU./dizwOQu5Lovu', 'admin');
+   1. Inserting Users:
 
-   INSERT INTO roles (role_id, role_name)
-   VALUES
-   (1, 'ROLE_ADMIN'),
-   (2, 'ROLE_USER');
+      ```sql
 
-   INSERT INTO users_roles (user_id, role_id)
-   VALUES
-   (2, 1),
-   (1, 2);
+      INSERT INTO users VALUES
+         (1,'ramesh@gmail.com','ramesh','$2a$10$5PiyN0MsG0y886d8xWXtwuLXK0Y7zZwcN5xm82b4oDSVr7yF0O6em','ramesh'),
+         (2,'admin@gmail.com','admin','$2a$10$gqHrslMttQWSsDSVRTK1OehkkBiXsJ/a4z2OURU./dizwOQu5Lovu','admin');
+
+      ```
+
+   2. Inserting Roles:
+
+      ```sql
+
+      INSERT INTO roles VALUES (1,'ROLE_ADMIN'),(2,'ROLE_USER');
+
+      ```
+
+   3. Inserting User-Role Relationships:
+
+      ```sql
+
+      INSERT INTO users_roles VALUES (2,1),(1,2);
+
+      ```
+
+## Running the Application
+
+1. **Build and Run the Application**
+
+   Use Maven to build and run the application:
+
+   ```bash
+   
+   mvn clean install
+   mvn spring-boot:run
 
    ```
+
+   The application will start on `http://localhost:8001`.
+
 ## Using the API
 
 1. **Access Swagger UI**
