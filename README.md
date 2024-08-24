@@ -35,10 +35,61 @@ Before running the application, ensure you have the following installed:
 
 3. **Create Tables**
 
-   The project code will auto-create the required tables. You do not need to manually create tables.
+   - **SQL query for creating the `supplier` table**:
 
+        ```sql
+        
+        CREATE TABLE supplier (
+          supplier_id BIGINT AUTO_INCREMENT PRIMARY KEY,
+          company_name VARCHAR(255) NOT NULL,
+          location VARCHAR(255) NOT NULL,
+          website VARCHAR(255) NOT NULL,
+          manufacturing_process ENUM('MOULDING', '_3D_PRINTING', 'CASTING', 'COATING') NOT NULL,
+          nature_of_business ENUM('SMALL_SCALE', 'MEDIUM_SCALE', 'LARGE_SCALE') NOT NULL
+        );
+      
+        ```
 
-4. **Update Application Properties**
+   - **SQL query for creating the `roles` table**:
+
+        ```sql
+        
+        CREATE TABLE roles (
+          id BIGINT AUTO_INCREMENT PRIMARY KEY,
+          name VARCHAR(255) NOT NULL
+        );
+ 
+        ```
+
+    - **SQL query for creating the `users` table**:
+
+        ```sql
+        
+        CREATE TABLE users (
+          id BIGINT AUTO_INCREMENT PRIMARY KEY,
+          name VARCHAR(255),
+          username VARCHAR(255) NOT NULL UNIQUE,
+          email VARCHAR(255) NOT NULL UNIQUE,
+          password VARCHAR(255) NOT NULL
+        );
+
+        ```
+
+    - **SQL query for creating the `users_roles` table**:
+
+       ```sql
+
+        CREATE TABLE users_roles (
+          user_id BIGINT NOT NULL,
+          role_id BIGINT NOT NULL,
+          PRIMARY KEY (user_id, role_id),
+          FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+          FOREIGN KEY (role_id) REFERENCES roles(id) ON DELETE CASCADE
+       );
+
+        ```
+
+5. **Update Application Properties**
 
    Open the `src/main/resources/application.properties` file and update the database credentials and JWT properties as follows:
 
