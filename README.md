@@ -12,6 +12,7 @@ Before running the application, ensure you have the following installed:
 - **Java 21**: Required to build and run the application.
 - **Maven**: For building the project and managing dependencies.
 - **MySQL**: Database system to store supplier data.
+- **Git Bash**
 
 ## Project Setup
 
